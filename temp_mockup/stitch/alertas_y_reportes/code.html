@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#85f8c4",
+              "on-tertiary-fixed-variant": "#005137",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1d",
+              "outline-variant": "#c5c6cd",
+              "on-primary-fixed": "#101b30",
+              "on-error-container": "#93000a",
+              "surface-tint": "#545e76",
+              "secondary-fixed": "#cbe7f5",
+              "inverse-primary": "#bbc6e2",
+              "on-primary-fixed-variant": "#3c475d",
+              "error": "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#45474d",
+              "surface-container-low": "#f3f4f5",
+              "surface-container-high": "#e7e8e9",
+              "on-tertiary-container": "#1fa072",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#304a55",
+              "on-secondary-fixed": "#021f29",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-container": "#cbe7f5",
+              "on-surface": "#191c1d",
+              "on-secondary-container": "#4e6874",
+              "primary-container": "#1b263b",
+              "primary-fixed": "#d7e2ff",
+              "surface-bright": "#f8f9fa",
+              "error-container": "#ffdad6",
+              "background": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "on-primary-container": "#828da7",
+              "surface-variant": "#e1e3e4",
+              "inverse-on-surface": "#f0f1f2",
+              "secondary": "#48626e",
+              "outline": "#75777d",
+              "surface": "#f8f9fa",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "tertiary": "#00160c",
+              "primary-fixed-dim": "#bbc6e2",
+              "secondary-fixed-dim": "#afcbd8",
+              "primary": "#051125",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#002114",
+              "tertiary-container": "#002d1d",
+              "tertiary-fixed-dim": "#68dba9",
+              "surface-dim": "#d9dadb"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(243, 244, 245, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full py-8 px-4 h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-100 dark:bg-slate-900 border-none z-50">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white uppercase">The Inventory</h1>
+<p class="text-xs font-inter tracking-tight font-bold text-slate-500 uppercase mt-1">Editorial Mode</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter tracking-tight font-bold text-sm">Panel de Control</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="apparel">apparel</span>
+<span class="font-inter tracking-tight font-bold text-sm">Catálogo</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-inter tracking-tight font-bold text-sm">Stock</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-900 dark:text-white font-bold border-l-4 border-slate-900 dark:border-slate-50 pl-4 bg-slate-200/50 dark:bg-slate-800 transition-colors scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter tracking-tight font-bold text-sm">Reportes</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter tracking-tight font-bold text-sm">Ajustes</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-slate-200/50 dark:border-slate-800/50">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-md font-bold text-sm mb-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Nuevo Ingreso
+            </button>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-inter tracking-tight font-bold text-sm">Soporte</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/20 dark:border-slate-800/20 h-16 flex justify-between items-center px-8">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-xs w-64 focus:ring-1 focus:ring-primary" placeholder="Buscar reportes o SKUs..." type="text"/>
+</div>
+<nav class="flex gap-6 items-center">
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm font-medium tracking-tight hover:text-slate-900 transition-opacity" href="#">Filtros</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm font-medium tracking-tight hover:text-slate-900 transition-opacity" href="#">Tallas</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm font-medium tracking-tight hover:text-slate-900 transition-opacity" href="#">Colores</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-slate-900 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Avatar de Administrador" class="h-full w-full object-cover" data-alt="Close-up portrait of a professional male fashion editor in a clean studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCik5JG1nfVKE1CsduP7XKKyEftlzotXWlXdAFGMQ9JYgsvVnqdyw35ML1Pr6MindBGEstN5rZ4X9hd9C20rK_9hL2JJCHfSppLgrXX5-yurppBBWcZnJkkViHFfcEUGAYjQSp8sg8fZAx3BgRSK7bSxf7RsfT5Tdh3MkIgron_6szDtThbxWtNXLnEeAzQJfc5NADta0Dzfm0yaMkotK9aJ6J11IkIiIA6Wy5eNsBvDtKFZWtzZtUzZrKF7QjeuvOt6X30nN9eWNM"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-32 px-12 pb-16 min-h-screen">
+<!-- Header Section -->
+<header class="mb-14">
+<span class="label-sm text-on-surface-variant tracking-[0.2em] uppercase font-bold text-[10px] mb-2 block">Sección Editorial de Stock</span>
+<h2 class="text-5xl font-bold tracking-tighter text-on-surface mb-4">Alertas &amp; Reportes Críticos</h2>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed">Gestión de inventario de alta rotación. Visualización inmediata de productos en riesgo de quiebre de stock para la colección actual.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Key Metrics (Top Row) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-[0.75rem] bg-error"></div>
+<div>
+<span class="label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Stock Crítico</span>
+<h3 class="text-4xl font-bold mt-2">12 SKUs</h3>
+<p class="text-error font-medium text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Acción requerida inmediata
+                    </p>
+</div>
+<div class="mt-8">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-error h-1.5 rounded-full w-3/4"></div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[0.75rem] bg-secondary-container"></div>
+<div>
+<span class="label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Bajo Stock</span>
+<h3 class="text-4xl font-bold mt-2">48 SKUs</h3>
+<p class="text-secondary font-medium text-sm mt-1">Reponer en próximos 5 días</p>
+</div>
+<div class="mt-8">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-secondary h-1.5 rounded-full w-1/3"></div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[0.75rem] bg-tertiary-fixed-dim"></div>
+<div>
+<span class="label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Estado Óptimo</span>
+<h3 class="text-4xl font-bold mt-2">852 SKUs</h3>
+<p class="text-on-tertiary-container font-medium text-sm mt-1">Flujo de inventario estable</p>
+</div>
+<div class="mt-8">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-tertiary-fixed-dim h-1.5 rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- Detailed Alerts Table (Main Column) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-1 overflow-hidden">
+<div class="bg-surface-container-high p-4 flex justify-between items-center px-6">
+<h4 class="label-md font-bold uppercase tracking-wider text-xs">Lista de Alertas de Productos</h4>
+<button class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-1">
+                        Ver todo
+                        <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 border-none">
+<th class="px-6 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Producto</th>
+<th class="px-6 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Talla</th>
+<th class="px-6 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Stock Actual</th>
+<th class="px-6 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Estado</th>
+<th class="px-6 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="bg-surface hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-end minimalist camel wool overcoat against a neutral gray studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgsGjiOv4zPeqaUGpmgK1cla_6uRJ44DeHpLsI57CfYhJs04Qr3xpeFYBNmbcn5gtmwyTbbKbPCy4kDpWLoRvdwEjUwbg5ElPVgBdey5i08r2OZk_QEvWDr-YMh6NijB7VL8zSpe9qChux1lV_SSfelcjR5eXRHo6nBGNrlDlenpUxvJKOCQkTTsXWAIajkW2Ao_8k2Ii_EtLyyGIBQbQ7w8LT-7hfvzpZhrqDG9CtN4Anp47WILKVbt0uwq4NKBzvoPEr75_ejwQ"/>
+</div>
+<div>
+<p class="font-bold text-sm">Abrigo Minimal Camel</p>
+<p class="text-[10px] text-on-surface-variant">REF: 2024-AM-01</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">M</td>
+<td class="px-6 py-4 text-sm font-bold text-error">2 unid.</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold uppercase rounded-full">Crítico</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline font-bold text-xs uppercase tracking-tighter">Ordenar</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed texture of premium selvedge denim jeans on a white surface with soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEHMqsFKFNGkU1ZwIzkrvWzmWUoJyZs3DTL9oc3mxPgdTlBxdYenhxFXaFCe89n4GJPlv2T82vUzzO0hfTnDEcQ5WHsxoQQGP3NVNJIh10DQmZHGjTMssnTs9y7ICvKVQXwdMQHDrotvvBBeiMGqw-Aoripo5QPbMUqf8LAoXf9caWNXRDWIBo5gFB4Lq5zR-m--bXfZM8KabsxUVF49CUzDUAqg_E53XqRRHEiKa4fitY05vfQ-RxV_otUmi2fwQbrWyXfyvPMi4"/>
+</div>
+<div>
+<p class="font-bold text-sm">Denim Selvedge Raw</p>
+<p class="text-[10px] text-on-surface-variant">REF: 2024-DS-08</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">32</td>
+<td class="px-6 py-4 text-sm font-bold text-secondary">8 unid.</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase rounded-full">Bajo</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline font-bold text-xs uppercase tracking-tighter">Revisar</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Folded premium black cotton t-shirt showing high-quality fabric texture in studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA295j3EL4pZQ6TXnrD_85gNmYn6hw-jLvpa_goyFydd6Z8RvB1v7Cy5bJgXW-AiJyCKhKvS6ZG1BFJV2LwKL8hKbiGAzUeKKHVQVYuSx7ogYrGX_PDYb20kFBvu5jZcSGQtwBsOKLbn-xG3WG48kvaMdz8tJG_lO9RvkN7ZzzjluQVi6IR0cTaRTXxb2PZk_JdYAWx_l7peyen7N7Uc-Or2dQDJKW5AOdllwteRMD3cz3oTrjsRdtBu_p4St97bSgbVWkQDYIxq9Q"/>
+</div>
+<div>
+<p class="font-bold text-sm">T-Shirt Supima Black</p>
+<p class="text-[10px] text-on-surface-variant">REF: 2024-TS-44</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">L</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">45 unid.</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase rounded-full">Óptimo</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 font-bold text-xs uppercase tracking-tighter cursor-default">-</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Category & Size Analytics (Secondary Column) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
+<!-- Tallas más demandadas -->
+<div class="bg-surface-container-highest rounded-xl p-8 flex-1">
+<h4 class="label-md font-bold uppercase tracking-widest text-xs mb-8 text-on-surface">Tallas más demandadas</h4>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="font-bold text-sm w-6">M</span>
+<div class="flex-1 h-2 bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">85%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-bold text-sm w-6">L</span>
+<div class="flex-1 h-2 bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 70%"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">70%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-bold text-sm w-6">S</span>
+<div class="flex-1 h-2 bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">45%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-bold text-sm w-6">XL</span>
+<div class="flex-1 h-2 bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 30%"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">30%</span>
+</div>
+</div>
+</div>
+<!-- Rendimiento Categorías -->
+<div class="bg-primary text-white rounded-xl p-8 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="label-md font-bold uppercase tracking-widest text-xs mb-6 text-on-primary-container">Top Categoría</h4>
+<div class="flex justify-between items-end">
+<div>
+<h5 class="text-3xl font-bold tracking-tight">Outerwear</h5>
+<p class="text-on-primary-container text-xs mt-1">Crecimiento +12.5% este mes</p>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-50" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<!-- Abstract Background Shape -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-container rounded-full opacity-50 blur-2xl"></div>
+</div>
+</div>
+<!-- Bottom Insight Card (Asymmetric) -->
+<div class="col-span-12 bg-surface-container-low rounded-xl p-10 flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1">
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Editorial Insight</span>
+<h3 class="text-3xl font-bold tracking-tight mb-4">Tendencia de Reposición</h3>
+<p class="text-on-surface-variant leading-relaxed">Basado en el ritmo de venta actual, se recomienda adelantar la producción de la línea "Essentials" en un 15% para evitar quiebres durante la próxima campaña de media temporada.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+<div class="bg-white p-6 rounded-xl flex flex-col items-center justify-center text-center w-32 h-32">
+<span class="text-2xl font-extrabold text-primary">8.2</span>
+<span class="text-[9px] uppercase font-bold tracking-widest text-slate-400 mt-1">Days Avg</span>
+</div>
+<div class="bg-white p-6 rounded-xl flex flex-col items-center justify-center text-center w-32 h-32">
+<span class="text-2xl font-extrabold text-primary">24h</span>
+<span class="text-[9px] uppercase font-bold tracking-widest text-slate-400 mt-1">Resp Time</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Filter (Minimalist pop-over logic) -->
+<div class="fixed bottom-10 right-10 z-50">
+<button class="bg-primary text-white h-14 w-14 rounded-full flex items-center justify-center shadow-2xl transition-transform active:scale-95 group">
+<span class="material-symbols-outlined transition-transform group-hover:rotate-12" data-icon="tune">tune</span>
+</button>
+</div>
+</body></html>

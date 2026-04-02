@@ -1,5 +1,19 @@
-node_modules
+# Node
+node_modules/
+dist/
+build/
+package-lock.json
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment
 .env
-dist
-build
+.env.local
+
+# OS
 .DS_Store
+Thumbs.db

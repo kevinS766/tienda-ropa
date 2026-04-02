@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Inventory Editorial - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#85f8c4",
+              "on-tertiary-fixed-variant": "#005137",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1d",
+              "outline-variant": "#c5c6cd",
+              "on-primary-fixed": "#101b30",
+              "on-error-container": "#93000a",
+              "surface-tint": "#545e76",
+              "secondary-fixed": "#cbe7f5",
+              "inverse-primary": "#bbc6e2",
+              "on-primary-fixed-variant": "#3c475d",
+              "error": "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#45474d",
+              "surface-container-low": "#f3f4f5",
+              "surface-container-high": "#e7e8e9",
+              "on-tertiary-container": "#1fa072",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#304a55",
+              "on-secondary-fixed": "#021f29",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-container": "#cbe7f5",
+              "on-surface": "#191c1d",
+              "on-secondary-container": "#4e6874",
+              "primary-container": "#1b263b",
+              "primary-fixed": "#d7e2ff",
+              "surface-bright": "#f8f9fa",
+              "error-container": "#ffdad6",
+              "background": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "on-primary-container": "#828da7",
+              "surface-variant": "#e1e3e4",
+              "inverse-on-surface": "#f0f1f2",
+              "secondary": "#48626e",
+              "outline": "#75777d",
+              "surface": "#f8f9fa",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "tertiary": "#00160c",
+              "primary-fixed-dim": "#bbc6e2",
+              "secondary-fixed-dim": "#afcbd8",
+              "primary": "#051125",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#002114",
+              "tertiary-container": "#002d1d",
+              "tertiary-fixed-dim": "#68dba9",
+              "surface-dim": "#d9dadb"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(243, 244, 245, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Integration -->
+<aside class="bg-slate-100 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-8 px-4 z-50 border-none">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white uppercase">The Inventory</h1>
+<p class="text-xs text-slate-500 font-medium tracking-widest mt-1">Editorial Mode</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active State: Panel de Control -->
+<a class="flex items-center gap-3 py-3 text-slate-900 dark:text-white font-bold border-l-4 border-slate-900 dark:border-slate-50 pl-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter tracking-tight font-bold text-sm">Panel de Control</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="apparel">apparel</span>
+<span class="font-inter tracking-tight font-bold text-sm">Catálogo</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-inter tracking-tight font-bold text-sm">Stock</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter tracking-tight font-bold text-sm">Reportes</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pl-4 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter tracking-tight font-bold text-sm">Ajustes</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-slate-200/50">
+<button class="w-full bg-primary text-white py-3 rounded-lg mb-6 flex items-center justify-center gap-2 scale-98 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="text-sm font-bold">Nuevo Ingreso</span>
+</button>
+<div class="flex items-center gap-3 px-4">
+<img alt="Usuario de Tienda" class="w-10 h-10 rounded-full object-cover" data-alt="Close-up professional portrait of a stylish woman in high-end editorial lighting, fashion industry professional aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEtl9T79jJIltJxG_Hpu4B2mQyfYkYv7Nu1F-sLK8CdGZgOeczffEXqpY98retk4aiUI02bYAI8hyvPl8D1PQXM6ut-RYDtPcndT3ymTEtyBMiGIrwwklG8oyWBJA4OLSWt7J-jN0Ir1XF9HrCRjeXstYKvXMxucichWKaYQ1kaIok7yAH0d5CEpvSr0X5Htlqy5pIMZL1-xqSOwxMbvQaTVb4dQDEw9Zx4HHXRaHLMJIttml2MnB9M7HyYSHhs3cL9qNoJgpnXuk"/>
+<div>
+<p class="text-sm font-bold text-slate-900">Admin User</p>
+<p class="text-xs text-slate-500">Editorial Lead</p>
+</div>
+</div>
+<a class="flex items-center gap-3 py-3 mt-4 text-slate-500 hover:text-slate-900 pl-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium">Soporte</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Integration -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center h-16 px-8 transition-opacity opacity-90 hover:opacity-100 duration-300">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-highest border-none rounded-md text-sm focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Buscar productos, SKUs..." type="text"/>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-slate-900 dark:text-white font-bold text-sm tracking-tight font-inter" href="#">Filtros</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 text-sm tracking-tight font-inter" href="#">Tallas</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 text-sm tracking-tight font-inter" href="#">Colores</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-slate-900">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-slate-900">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="px-8 pb-12 max-w-[1400px] mx-auto">
+<!-- Header Section with Intentional Asymmetry -->
+<div class="mt-16 mb-12 flex justify-between items-end">
+<div>
+<p class="text-sm font-label uppercase tracking-[0.2em] text-on-surface-variant mb-2">Visión General</p>
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tighter">Panel de Control</h2>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 text-sm font-medium border border-outline-variant/20 rounded-md hover:bg-surface-container transition-colors">Descargar Reporte</button>
+<button class="px-6 py-2 text-sm font-bold bg-gradient-to-br from-primary to-primary-container text-white rounded-md shadow-lg shadow-primary/10">Hoy: 24 Oct</button>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Metric 1: Value -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-fixed-dim"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="payments">payments</span>
+</span>
+<span class="text-xs font-bold text-on-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                            +12.5%
+                        </span>
+</div>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mb-1">Valor Total Inventario</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">$248,390.00</h3>
+</div>
+<!-- Metric 2: Low Stock -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-error-container rounded-lg">
+<span class="material-symbols-outlined text-on-error-container" data-icon="warning">warning</span>
+</span>
+<span class="text-xs font-bold text-error flex items-center gap-1">
+                            Requiere Acción
+                        </span>
+</div>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mb-1">Stock Bajo</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">14 Items</h3>
+</div>
+<!-- Metric 3: Units Sold -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="shopping_bag">shopping_bag</span>
+</span>
+<span class="text-xs font-bold text-on-surface-variant">Meta: 150</span>
+</div>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mb-1">Unidades Vendidas Hoy</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">82 Unidades</h3>
+</div>
+</div>
+<!-- Middle Section: Graph and Quick Actions -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Sales Chart Simulation -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
+<div class="flex justify-between items-center mb-10">
+<h4 class="text-lg font-bold tracking-tight">Ventas Recientes (7 días)</h4>
+<select class="bg-surface-container border-none text-xs font-bold rounded-md px-3 py-1.5 focus:ring-0">
+<option>Esta Semana</option>
+<option>Mes Pasado</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<!-- Bar Chart Representation -->
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[45%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">1.2k</div>
+</div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[60%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">1.8k</div>
+</div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[55%]"></div>
+<div class="flex-1 bg-primary rounded-t-lg relative group h-[85%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] py-1 px-2 rounded opacity-100">2.4k</div>
+</div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[40%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[65%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group h-[50%]"></div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Lun</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Mar</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Mie</span>
+<span class="text-[10px] font-label text-primary font-bold uppercase tracking-widest">Jue</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Vie</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Sab</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Dom</span>
+</div>
+</div>
+<!-- Featured Category / Performance -->
+<div class="bg-primary text-white p-8 rounded-xl flex flex-col justify-between relative overflow-hidden">
+<img alt="Top Category" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30" data-alt="Cinematic high-angle shot of folded designer garments on a minimalist white table with harsh clean shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCte8EBvbR6gLmET7O3NWoHXgxRy2kdGdLEvryzVBjvyYFIBvBcfHcajnTmyCX1YTeS_j8fMTVs_yHderTq63vD6LjQwjgR1TVRi4u2xZ4BjNaGFDNH9_NmIinjdqmvy5fDNw6wuufWhL7Pr2-sFSoRfd70hAESyS66bkeDcIj-vsyo3SBtLXcTH9Yz0uOYzLKnPH0J2E6kX7sHMb9RH2UzryvrVINAZ0huyr7qseu0_oMe8_lb4qb0Afjv8LIjU1fe6HJvqKD2Qsc"/>
+<div class="relative z-10">
+<span class="bg-tertiary-fixed text-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Best Seller</span>
+<h4 class="text-2xl font-bold mt-4 leading-tight">Colección Otoño: Abrigos Minimal</h4>
+</div>
+<div class="relative z-10">
+<p class="text-4xl font-headline font-bold">85%</p>
+<p class="text-xs opacity-70 tracking-tight">Stock vendido en 14 días</p>
+<button class="mt-6 w-full py-2 bg-white text-primary text-sm font-bold rounded-md hover:bg-slate-100 transition-colors">Ver Detalles</button>
+</div>
+</div>
+</div>
+<!-- Recent Movements Table -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-high">
+<h4 class="text-sm font-label uppercase tracking-[0.15em] font-bold">Últimos movimientos</h4>
+<button class="text-xs font-bold text-on-surface-variant hover:text-primary flex items-center gap-1">
+                        Ver historial completo <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high/50 text-on-surface-variant">
+<tr>
+<th class="px-8 py-3 text-[10px] font-label uppercase tracking-widest">Producto</th>
+<th class="px-8 py-3 text-[10px] font-label uppercase tracking-widest">Tipo</th>
+<th class="px-8 py-3 text-[10px] font-label uppercase tracking-widest">Cantidad</th>
+<th class="px-8 py-3 text-[10px] font-label uppercase tracking-widest">Origen/Destino</th>
+<th class="px-8 py-3 text-[10px] font-label uppercase tracking-widest">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="bg-surface hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded overflow-hidden">
+<img alt="Product Thumbnail" class="w-full h-full object-cover" data-alt="Macro close-up of premium wool fabric texture on a beige designer jacket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArQTA-IxfoMNagR5Go5hnAnmptY-AazWueOUsTBlFprTXz7GZ9CvB0Vd_49r4UZI88KnAGOg-dqYWmVawf2YNe-VPHz8wRXSXWPCXDuC8dYqNUm2n6Or5wQEcYRfDnAP3cpszxbbXWCWBv4kj6nS3AcOhme1ewin193uC2Xp2Oto0wpnv9Nep881UwAS-iJQIxtssGx29FwqHXs8dsBWZATEGfxV7JPMtidcDLrOpjNJ9Cnb1nJ-85oWJvCzeRVXDFhXL__29s5tM"/>
+</div>
+<div>
+<p class="text-sm font-bold">Parka de Lino 'Aries'</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU-29384-BL</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-sm font-medium">Venta Online</td>
+<td class="px-8 py-4 text-sm font-bold text-error">-1</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Tienda Central</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Completado</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded overflow-hidden">
+<img alt="Product Thumbnail" class="w-full h-full object-cover" data-alt="Detailed studio shot of indigo selvedge denim jeans with focus on the metallic rivets and stitching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcddzBVV8MDsqMPEPY49Hxaqexn_HtJioEJLGz38KC_pX67JHJXuJrsY4uUQaWFKYkRvJ9KiLYwTvQehAHlvZER416WlVptkPXCCGVCGO7UFdwt4q-F4hdSRiaMFXrdUmWBVpwKKdYiqDg9seMhieoOWi46McFgL2xb95aBxECVDmot3S_2Ss7Z3fzTFpBCFrbVYBLzH91wTB33B9lLc6XLujA1rjEdR2VFTFb-ErmTyXHWapV5oY9d0xhOaRD_g3y81V5eFaDnC4"/>
+</div>
+<div>
+<p class="text-sm font-bold">Denim Selvedge Slim</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU-11202-ID</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-sm font-medium">Reabastecimiento</td>
+<td class="px-8 py-4 text-sm font-bold text-on-tertiary-container">+25</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Proveedor: Nord</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">En Camino</span>
+</td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded overflow-hidden">
+<img alt="Product Thumbnail" class="w-full h-full object-cover" data-alt="Product photography of a crisp white cotton t-shirt neatly folded on a slate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nC9BY_es60yVCu7nPqiNMGbLpqSvmGZnktTgqsiGanEZPuux9K0G-qu8wwMac5ifoSuqJtk5Xfh8lgi4a6WtCdssoG3liIqFe0tCvW5OmazeQvPPf764x7fP27Vs1LiOsdP0rOWVHlzYUb_H_XJVYUa75oOqwjg12BaEDgQbvMZpXickDP_roqSoi1ibanapVqXf_enYPElWckBIdff0IzX-sD9TYhWVn8iywIgovwgtfMNY7ckv4UETYiJfabGymz2dQpqEd1I"/>
+</div>
+<div>
+<p class="text-sm font-bold">T-Shirt Algodón Pima</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU-00592-WT</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-sm font-medium">Ajuste Manual</td>
+<td class="px-8 py-4 text-sm font-bold text-error">-2</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Dañado / Devolución</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Revisión</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for Inventory Entry -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+</body></html>
