@@ -1,4 +1,4 @@
-# Documentación Frontend - AARRRON
+# Documentación Frontend - Tienda de Ropa
 
 Este documento detalla la arquitectura y el funcionamiento de la interfaz de usuario.
 

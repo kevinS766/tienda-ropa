@@ -1,4 +1,4 @@
-# Project Overview: Tienda de Ropa (AARRRON)
+# Project Overview: Tienda de Ropa
 
 A comprehensive clothing store management system featuring a React frontend and a Python-based backend. The project is structured to follow a multi-role development approach (Backend, Frontend, and DevOps) as outlined in the requirements.
 

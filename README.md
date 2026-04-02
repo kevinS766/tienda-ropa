@@ -1,4 +1,4 @@
-# Tienda de Ropa (AARRRON) - Inventory Management System
+# Tienda de Ropa - Inventory Management System
 
 Sistema integral de gestión de inventario para una tienda de ropa, desarrollado con una arquitectura desacoplada de Frontend y Backend.
 
