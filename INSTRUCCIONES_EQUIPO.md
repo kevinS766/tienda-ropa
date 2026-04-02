@@ -4,7 +4,7 @@ Este documento resume el estado actual del desarrollo frontend y proporciona ins
 
 ---
 
-## 📍 Información General del Repositorio
+## Información General del Repositorio
 *   **Repositorio oficial:** `https://github.com/kevinS766/tienda-ropa`
 *   **Rama de Producción:** `main` (Limpia y funcional).
 *   **Rama de Desarrollo:** `develop` (Punto de partida para nuevas funcionalidades).
@@ -16,7 +16,7 @@ Cada integrante debe sacar su propia rama desde `develop` siguiendo el estándar
 
 ---
 
-## 🐍 Instrucciones para BACKEND (Python + MySQL)
+## Instrucciones para BACKEND (Python + MySQL)
 
 El frontend ya está preparado para conectarse. Aquí tienes los detalles técnicos:
 
@@ -33,7 +33,7 @@ El frontend ya está preparado para conectarse. Aquí tienes los detalles técni
 
 ---
 
-## 🐳 Instrucciones para INFRAESTRUCTURA (DevOps + Docker)
+## Instrucciones para INFRAESTRUCTURA (DevOps + Docker)
 
 El entorno local debe ser orquestado para que todos los servicios se comuniquen correctamente:
 
@@ -51,7 +51,7 @@ El entorno local debe ser orquestado para que todos los servicios se comuniquen 
 
 ---
 
-## 📄 Documentación Adicional
+## Documentación Adicional
 *   `README.md`: Instrucciones generales de instalación.
 *   `FRONTEND.md`: Detalle técnico de la arquitectura React y componentes implementados.
 
