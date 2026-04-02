@@ -2,13 +2,13 @@
 
 Sistema integral de gestión de inventario para una tienda de ropa, desarrollado con una arquitectura desacoplada de Frontend y Backend.
 
-## 🚀 Stack Tecnológico
+## Stack Tecnológico
 
 - **Frontend:** React 19 + Vite + Tailwind CSS 4 + Axios.
 - **Backend:** Python (FastAPI/Django) + MySQL (Por implementar).
 - **Control de Versiones:** Git (Flujo de ramas feature/develop/main).
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 /
@@ -23,7 +23,7 @@ Sistema integral de gestión de inventario para una tienda de ropa, desarrollado
 └── FRONTEND.md           # Documentación específica del frontend
 ```
 
-## 🛠️ Instalación y Ejecución Local
+## Instalación y Ejecución Local
 
 ### Requisitos
 - Node.js (versión 18 o superior)
@@ -38,7 +38,7 @@ Sistema integral de gestión de inventario para una tienda de ropa, desarrollado
    `VITE_API_URL=http://localhost:8000`
 5. Iniciar servidor de desarrollo: `npm run dev`
 
-## 🌿 Flujo de Trabajo (Git)
+## Flujo de Trabajo (Git)
 
 - **main:** Rama de producción.
 - **develop:** Rama de integración para desarrollo.
