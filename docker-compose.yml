@@ -39,19 +39,6 @@ services:
     networks:
       - tienda_net
 
-  frontend:
-    build: ./frontend
-    container_name: tienda_frontend
-    restart: always
-    environment:
-      VITE_API_URL: http://localhost:8000
-    ports:
-      - "5173:5173"
-    depends_on:
-      - backend
-    networks:
-      - tienda_net
-
 networks:
   tienda_net:
     driver: bridge
